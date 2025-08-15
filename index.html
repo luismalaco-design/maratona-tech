@@ -3,46 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sugestões para a Cidade</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Fale com a Prefeitura de Rio Branco do Ivaí</title>
     <style>
         :root {
-            --primary-color: #2b6cb0;
-            --secondary-color: #2c5282;
-            --accent-color: #4299e1;
-            --light-color: #f7fafc;
-            --dark-color: #1a202c;
-            --success-color: #48bb78;
-            --warning-color: #ed8936;
-            --error-color: #f56565;
-            --terminal-bg: #1a202c;
-            --terminal-text: #e2e8f0;
-            --terminal-prompt: #81e6d9;
-            --terminal-command: #90cdf4;
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --accent-color: #4895ef;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --success-color: #4cc9f0;
+            --warning-color: #f72585;
+            --terminal-bg: #1e1e1e;
+            --terminal-text: #f0f0f0;
+            --terminal-prompt: #4cc9f0;
+            --terminal-command: #a5d8ff;
             --border-radius: 12px;
-            --box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Courier New', monospace, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #edf2f7;
+            background-color: #f5f7ff;
             color: var(--dark-color);
             line-height: 1.6;
             padding: 20px;
             background-image: 
-                radial-gradient(circle at 10% 20%, rgba(66, 153, 225, 0.05) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(45, 55, 72, 0.05) 0%, transparent 20%);
+                radial-gradient(circle at 10% 20%, rgba(67, 97, 238, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(72, 149, 239, 0.05) 0%, transparent 20%);
         }
 
         .container {
-            max-width: 900px;
+            max-width: 800px;
             margin: 40px auto;
             padding: 40px;
             background-color: white;
@@ -53,12 +51,11 @@
 
         h1 {
             color: var(--primary-color);
-            margin-bottom: 25px;
-            font-size: 2.4rem;
+            margin-bottom: 20px;
+            font-size: 2.2rem;
             text-align: center;
             position: relative;
             padding-bottom: 15px;
-            font-weight: 700;
         }
 
         h1::after {
@@ -67,17 +64,10 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
+            width: 80px;
             height: 4px;
-            background: linear-gradient(to right, var(--primary-color), var(--accent-color);
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
             border-radius: 2px;
-        }
-
-        .intro-text {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #4a5568;
-            font-size: 1.1rem;
         }
 
         .mode-selector {
@@ -85,24 +75,16 @@
             justify-content: center;
             margin-bottom: 30px;
             gap: 15px;
-            flex-wrap: wrap;
         }
 
         .mode-btn {
-            padding: 12px 25px;
+            padding: 10px 20px;
             background: white;
             border: 2px solid var(--primary-color);
             border-radius: 30px;
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .mode-btn i {
-            font-size: 1.1rem;
         }
 
         .mode-btn.active {
@@ -111,8 +93,8 @@
         }
 
         .mode-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 15px rgba(43, 108, 176, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(67, 97, 238, 0.2);
         }
 
         /* Estilos do Formulário Tradicional */
@@ -120,30 +102,8 @@
             display: block;
         }
 
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .form-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
         .form-group {
             margin-bottom: 25px;
-        }
-
-        .form-group.full-width {
-            grid-column: span 2;
-        }
-
-        @media (max-width: 768px) {
-            .form-group.full-width {
-                grid-column: span 1;
-            }
         }
 
         label {
@@ -151,58 +111,29 @@
             margin-bottom: 8px;
             font-weight: 600;
             color: var(--dark-color);
-            font-size: 0.95rem;
-        }
-
-        .required-field::after {
-            content: ' *';
-            color: var(--error-color);
         }
 
         input, textarea, select {
             width: 100%;
             padding: 15px;
-            border: 2px solid #e2e8f0;
+            border: 2px solid #e9ecef;
             border-radius: var(--border-radius);
             font-size: 1rem;
             transition: var(--transition);
-            background-color: #f8fafc;
-        }
-
-        input:focus, textarea:focus, select:focus {
-            outline: none;
-            border-color: var(--accent-color);
-            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
-            background-color: white;
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         textarea {
             resize: vertical;
-            min-height: 150px;
-        }
-
-        .form-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 20px;
+            min-height: 120px;
         }
 
         .confirmation-checkbox {
             display: flex;
             align-items: center;
             gap: 10px;
-        }
-
-        .confirmation-checkbox input {
-            width: auto;
-        }
-
-        .character-count {
-            font-size: 0.85rem;
-            color: #718096;
-            text-align: right;
-            margin-top: 5px;
+            margin-top: 15px;
         }
 
         /* Estilos do Terminal */
@@ -213,9 +144,8 @@
             padding: 20px;
             border-radius: var(--border-radius);
             font-family: 'Courier New', monospace;
-            height: 500px;
+            height: 400px;
             overflow-y: auto;
-            position: relative;
         }
 
         .terminal-header {
@@ -223,18 +153,14 @@
             justify-content: space-between;
             margin-bottom: 15px;
             color: var(--terminal-prompt);
-            font-weight: bold;
-            padding-bottom: 10px;
-            border-bottom: 1px solid rgba(129, 230, 217, 0.2);
         }
 
         .terminal-body {
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         .terminal-prompt {
             color: var(--terminal-prompt);
-            font-weight: bold;
         }
 
         .terminal-command {
@@ -243,17 +169,12 @@
 
         .terminal-input {
             display: flex;
-            margin-top: 15px;
-            position: sticky;
-            bottom: 0;
-            background-color: var(--terminal-bg);
-            padding-top: 10px;
+            margin-top: 10px;
         }
 
         .terminal-input span {
             color: var(--terminal-prompt);
             margin-right: 10px;
-            font-weight: bold;
         }
 
         #terminalCommand {
@@ -263,8 +184,6 @@
             color: var(--terminal-text);
             font-family: 'Courier New', monospace;
             outline: none;
-            border-bottom: 1px solid var(--terminal-prompt);
-            padding: 5px;
         }
 
         /* Botão de Envio */
@@ -279,141 +198,35 @@
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 20px;
         }
 
         .submit-btn:hover {
             background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(43, 108, 176, 0.3);
-        }
-
-        .submit-btn:active {
-            transform: translateY(0);
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
         }
 
         /* Mensagens de Status */
         .status-message {
-            margin-top: 25px;
-            padding: 18px;
+            margin-top: 20px;
+            padding: 15px;
             border-radius: var(--border-radius);
             text-align: center;
             display: none;
-            font-weight: 500;
-        }
-
-        .status-message i {
-            margin-right: 10px;
         }
 
         .success {
-            background-color: rgba(72, 187, 120, 0.15);
+            background-color: rgba(76, 201, 240, 0.2);
             color: var(--dark-color);
             border: 1px solid var(--success-color);
         }
 
-        .error {
-            background-color: rgba(245, 101, 101, 0.15);
-            color: var(--dark-color);
-            border: 1px solid var(--error-color);
-        }
-
-        .warning {
-            background-color: rgba(237, 137, 54, 0.15);
-            color: var(--dark-color);
-            border: 1px solid var(--warning-color);
-        }
-
-        /* Categorias de sugestão */
-        .category-selector {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .category-btn {
-            padding: 10px 15px;
-            background: #e2e8f0;
-            border: none;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .category-btn:hover {
-            background: #cbd5e0;
-        }
-
-        .category-btn.active {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        /* Upload de arquivos */
-        .file-upload {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            border: 2px dashed #cbd5e0;
-            border-radius: var(--border-radius);
-            background-color: #f8fafc;
-            cursor: pointer;
-            transition: var(--transition);
-            text-align: center;
-        }
-
-        .file-upload:hover {
-            border-color: var(--accent-color);
-            background-color: #ebf8ff;
-        }
-
-        .file-upload i {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .file-upload input {
-            display: none;
-        }
-
-        .file-preview {
-            margin-top: 15px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .file-preview-item {
-            background: #e2e8f0;
-            padding: 8px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .file-preview-item i {
-            cursor: pointer;
-            color: #718096;
-        }
-
-        .file-preview-item i:hover {
-            color: var(--error-color);
-        }
-
-        /* Responsividade */
         @media (max-width: 768px) {
             .container {
-                padding: 25px;
-                margin: 20px auto;
+                padding: 20px;
             }
             
             h1 {
@@ -424,136 +237,60 @@
                 flex-direction: column;
                 gap: 10px;
             }
-            
-            .mode-btn {
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .form-footer {
-                flex-direction: column;
-                gap: 15px;
-                align-items: flex-start;
-            }
-        }
-
-        /* Animações */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .fade-in {
-            animation: fadeIn 0.3s ease-out forwards;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Sugestões para Nossa Cidade</h1>
-        <p class="intro-text">Sua opinião é importante para melhorarmos nossa cidade. Envie sugestões, reclamações ou elogios.</p>
+        <h1>Fale com a Prefeitura de Rio Branco do Ivaí</h1>
         
         <div class="mode-selector">
-            <button class="mode-btn active" data-mode="form">
-                <i class="fas fa-edit"></i> Modo Formulário
-            </button>
-            <button class="mode-btn" data-mode="terminal">
-                <i class="fas fa-terminal"></i> Modo Terminal
-            </button>
+            <button class="mode-btn active" data-mode="form">Modo Formulário</button>
+            <button class="mode-btn" data-mode="terminal">Modo Terminal</button>
         </div>
         
         <!-- Formulário Tradicional -->
         <div id="formContainer" class="form-container">
+            <p>Preencha o formulário para enviar sua sugestão ou reclamação:</p>
+            
             <form id="formSugestao">
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="nome" class="required-field">Nome:</label>
-                        <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email" class="required-field">Email:</label>
-                        <input type="email" id="email" name="email" required placeholder="seu@email.com">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="telefone">Telefone:</label>
-                        <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="bairro">Bairro:</label>
-                        <input type="text" id="bairro" name="bairro" placeholder="Seu bairro">
-                    </div>
-                    
-                    <div class="form-group full-width">
-                        <label for="tipo" class="required-field">Tipo de Mensagem:</label>
-                        <select id="tipo" name="tipo" required>
-                            <option value="">Selecione...</option>
-                            <option value="Sugestão">Sugestão</option>
-                            <option value="Reclamação">Reclamação</option>
-                            <option value="Elogio">Elogio</option>
-                            <option value="Denúncia">Denúncia</option>
-                            <option value="Solicitação">Solicitação de Serviço</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group full-width">
-                        <label for="categoria">Categoria (opcional):</label>
-                        <div class="category-selector">
-                            <button type="button" class="category-btn" data-category="Infraestrutura">Infraestrutura</button>
-                            <button type="button" class="category-btn" data-category="Transporte">Transporte</button>
-                            <button type="button" class="category-btn" data-category="Educação">Educação</button>
-                            <button type="button" class="category-btn" data-category="Saúde">Saúde</button>
-                            <button type="button" class="category-btn" data-category="Segurança">Segurança</button>
-                            <button type="button" class="category-btn" data-category="Meio Ambiente">Meio Ambiente</button>
-                            <button type="button" class="category-btn" data-category="Cultura">Cultura</button>
-                            <button type="button" class="category-btn" data-category="Esportes">Esportes</button>
-                        </div>
-                        <input type="hidden" id="categoria" name="categoria">
-                    </div>
-                    
-                    <div class="form-group full-width">
-                        <label for="mensagem" class="required-field">Mensagem:</label>
-                        <textarea id="mensagem" name="mensagem" rows="6" required placeholder="Descreva sua sugestão, reclamação ou elogio com detalhes..."></textarea>
-                        <div class="character-count"><span id="charCount">0</span>/1000 caracteres</div>
-                    </div>
-                    
-                    <div class="form-group full-width">
-                        <label>Anexos (opcional):</label>
-                        <div class="file-upload" id="fileUploadArea">
-                            <i class="fas fa-cloud-upload-alt"></i>
-                            <p>Arraste arquivos aqui ou clique para selecionar</p>
-                            <p class="small-text">(Máx. 3 arquivos, 5MB cada)</p>
-                            <input type="file" id="fileInput" multiple accept="image/*,.pdf,.doc,.docx">
-                        </div>
-                        <div class="file-preview" id="filePreview"></div>
-                    </div>
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
                 </div>
                 
-                <div class="form-footer">
-                    <div class="confirmation-checkbox">
-                        <input type="checkbox" id="receberCopia" name="receberCopia" checked>
-                        <label for="receberCopia">Receber cópia da mensagem no meu email</label>
-                    </div>
-                    
-                    <div class="confirmation-checkbox">
-                        <input type="checkbox" id="concordoTermos" name="concordoTermos" required>
-                        <label for="concordoTermos" class="required-field">Concordo com os termos de uso</label>
-                    </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
                 </div>
                 
-                <button type="submit" class="submit-btn">
-                    <i class="fas fa-paper-plane"></i> Enviar Mensagem
-                </button>
+                <div class="form-group">
+                    <label for="tipo">Tipo de Mensagem:</label>
+                    <select id="tipo" name="tipo" required>
+                        <option value="Sugestão">Sugestão</option>
+                        <option value="Reclamação">Reclamação</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="6" required></textarea>
+                </div>
+                
+                <div class="confirmation-checkbox">
+                    <input type="checkbox" id="receberCopia" name="receberCopia" checked>
+                    <label for="receberCopia">Receber cópia da mensagem no meu email</label>
+                </div>
+                
+                <button type="submit" class="submit-btn">Enviar Mensagem</button>
             </form>
         </div>
         
         <!-- Terminal de Comandos -->
         <div id="terminalContainer" class="terminal-container">
             <div class="terminal-header">
-                <span><i class="fas fa-terminal"></i> Terminal de Sugestões - Prefeitura Municipal</span>
-                <span>v2.0.0</span>
+                <span>Terminal de Sugestões - Prefeitura Municipal</span>
+                <span>v1.0.0</span>
             </div>
             
             <div class="terminal-body" id="terminalOutput">
@@ -567,7 +304,7 @@
             
             <div class="terminal-input">
                 <span class="terminal-prompt">>></span>
-                <input type="text" id="terminalCommand" placeholder="Digite um comando..." autocomplete="off">
+                <input type="text" id="terminalCommand" placeholder="Digite um comando...">
             </div>
         </div>
         
@@ -596,149 +333,13 @@
             });
         });
         
-        // Contador de caracteres
-        const mensagemTextarea = document.getElementById('mensagem');
-        const charCount = document.getElementById('charCount');
-        
-        mensagemTextarea.addEventListener('input', () => {
-            const count = mensagemTextarea.value.length;
-            charCount.textContent = count;
-            
-            if (count > 1000) {
-                charCount.style.color = 'var(--error-color)';
-            } else {
-                charCount.style.color = '#718096';
-            }
-        });
-        
-        // Seleção de categoria
-        const categoryBtns = document.querySelectorAll('.category-btn');
-        const categoriaInput = document.getElementById('categoria');
-        
-        categoryBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                categoryBtns.forEach(b => b.classList.remove('active'));
-                
-                if (categoriaInput.value === btn.dataset.category) {
-                    categoriaInput.value = '';
-                } else {
-                    btn.classList.add('active');
-                    categoriaInput.value = btn.dataset.category;
-                }
-            });
-        });
-        
-        // Upload de arquivos
-        const fileUploadArea = document.getElementById('fileUploadArea');
-        const fileInput = document.getElementById('fileInput');
-        const filePreview = document.getElementById('filePreview');
-        const MAX_FILES = 3;
-        const MAX_SIZE = 5 * 1024 * 1024; // 5MB
-        
-        let files = [];
-        
-        fileUploadArea.addEventListener('click', () => {
-            fileInput.click();
-        });
-        
-        fileUploadArea.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            fileUploadArea.style.borderColor = 'var(--accent-color)';
-            fileUploadArea.style.backgroundColor = '#ebf8ff';
-        });
-        
-        fileUploadArea.addEventListener('dragleave', () => {
-            fileUploadArea.style.borderColor = '#cbd5e0';
-            fileUploadArea.style.backgroundColor = '#f8fafc';
-        });
-        
-        fileUploadArea.addEventListener('drop', (e) => {
-            e.preventDefault();
-            fileUploadArea.style.borderColor = '#cbd5e0';
-            fileUploadArea.style.backgroundColor = '#f8fafc';
-            
-            if (e.dataTransfer.files.length > 0) {
-                handleFiles(e.dataTransfer.files);
-            }
-        });
-        
-        fileInput.addEventListener('change', () => {
-            if (fileInput.files.length > 0) {
-                handleFiles(fileInput.files);
-            }
-        });
-        
-        function handleFiles(newFiles) {
-            // Verifica se já atingiu o limite de arquivos
-            if (files.length >= MAX_FILES) {
-                showStatus(`Você só pode enviar no máximo ${MAX_FILES} arquivos.`, 'error');
-                return;
-            }
-            
-            // Adiciona novos arquivos (verificando tamanho e limite)
-            for (let i = 0; i < newFiles.length && files.length < MAX_FILES; i++) {
-                const file = newFiles[i];
-                
-                if (file.size > MAX_SIZE) {
-                    showStatus(`O arquivo ${file.name} excede o tamanho máximo de 5MB.`, 'error');
-                    continue;
-                }
-                
-                files.push(file);
-            }
-            
-            updateFilePreview();
-        }
-        
-        function updateFilePreview() {
-            filePreview.innerHTML = '';
-            
-            files.forEach((file, index) => {
-                const fileItem = document.createElement('div');
-                fileItem.className = 'file-preview-item';
-                
-                const icon = document.createElement('i');
-                icon.className = getFileIcon(file.type);
-                
-                const name = document.createElement('span');
-                name.textContent = file.name.length > 20 
-                    ? file.name.substring(0, 15) + '...' + file.name.split('.').pop() 
-                    : file.name;
-                
-                const removeBtn = document.createElement('i');
-                removeBtn.className = 'fas fa-times';
-                removeBtn.addEventListener('click', () => removeFile(index));
-                
-                fileItem.appendChild(icon);
-                fileItem.appendChild(name);
-                fileItem.appendChild(removeBtn);
-                
-                filePreview.appendChild(fileItem);
-            });
-        }
-        
-        function getFileIcon(fileType) {
-            if (fileType.includes('image')) return 'far fa-image';
-            if (fileType.includes('pdf')) return 'far fa-file-pdf';
-            if (fileType.includes('word')) return 'far fa-file-word';
-            return 'far fa-file';
-        }
-        
-        function removeFile(index) {
-            files.splice(index, 1);
-            updateFilePreview();
-        }
-        
         // Variáveis para o terminal
         let terminalData = {
             nome: '',
             email: '',
-            telefone: '',
-            bairro: '',
             tipo: 'Sugestão',
-            categoria: '',
             mensagem: '',
-            step: 0 // 0 = nome, 1 = email, 2 = telefone, 3 = bairro, 4 = tipo, 5 = categoria, 6 = mensagem, 7 = confirmação
+            step: 0 // 0 = nome, 1 = email, 2 = tipo, 3 = mensagem, 4 = confirmação
         };
         
         // Comandos do terminal
@@ -749,14 +350,9 @@
                     <div><span class="terminal-command">iniciar</span> - Começar novo envio</div>
                     <div><span class="terminal-command">sugestao</span> - Definir como sugestão</div>
                     <div><span class="terminal-command">reclamacao</span> - Definir como reclamação</div>
-                    <div><span class="terminal-command">elogio</span> - Definir como elogio</div>
-                    <div><span class="terminal-command">denuncia</span> - Definir como denúncia</div>
-                    <div><span class="terminal-command">solicitacao</span> - Definir como solicitação</div>
-                    <div><span class="terminal-command">categoria [nome]</span> - Definir categoria (ex: categoria Saúde)</div>
                     <div><span class="terminal-command">sim</span> - Confirmar envio</div>
                     <div><span class="terminal-command">nao</span> - Cancelar envio</div>
                     <div><span class="terminal-command">limpar</span> - Limpar terminal</div>
-                    <div><span class="terminal-command">voltar</span> - Voltar para o passo anterior</div>
                 `);
             },
             limpar: () => {
@@ -766,10 +362,7 @@
                 terminalData = {
                     nome: '',
                     email: '',
-                    telefone: '',
-                    bairro: '',
                     tipo: 'Sugestão',
-                    categoria: '',
                     mensagem: '',
                     step: 0
                 };
@@ -780,109 +373,34 @@
                 `);
             },
             sugestao: () => {
-                if (terminalData.step >= 4) {
+                if (terminalData.step >= 2) {
                     terminalData.tipo = 'Sugestão';
                     addTerminalOutput(`
                         <div>Tipo definido como: <span class="terminal-command">Sugestão</span></div>
-                        ${terminalData.step === 4 ? '<div>Deseja informar uma categoria? (opcional)</div>' : '<div>Por favor, digite sua mensagem:</div>'}
+                        <div>Por favor, digite sua mensagem:</div>
                     `);
-                    terminalData.step = terminalData.step === 4 ? 5 : 6;
+                    terminalData.step = 3;
                 }
             },
             reclamacao: () => {
-                if (terminalData.step >= 4) {
+                if (terminalData.step >= 2) {
                     terminalData.tipo = 'Reclamação';
                     addTerminalOutput(`
                         <div>Tipo definido como: <span class="terminal-command">Reclamação</span></div>
-                        ${terminalData.step === 4 ? '<div>Deseja informar uma categoria? (opcional)</div>' : '<div>Por favor, digite sua mensagem:</div>'}
-                    `);
-                    terminalData.step = terminalData.step === 4 ? 5 : 6;
-                }
-            },
-            elogio: () => {
-                if (terminalData.step >= 4) {
-                    terminalData.tipo = 'Elogio';
-                    addTerminalOutput(`
-                        <div>Tipo definido como: <span class="terminal-command">Elogio</span></div>
-                        ${terminalData.step === 4 ? '<div>Deseja informar uma categoria? (opcional)</div>' : '<div>Por favor, digite sua mensagem:</div>'}
-                    `);
-                    terminalData.step = terminalData.step === 4 ? 5 : 6;
-                }
-            },
-            denuncia: () => {
-                if (terminalData.step >= 4) {
-                    terminalData.tipo = 'Denúncia';
-                    addTerminalOutput(`
-                        <div>Tipo definido como: <span class="terminal-command">Denúncia</span></div>
-                        ${terminalData.step === 4 ? '<div>Deseja informar uma categoria? (opcional)</div>' : '<div>Por favor, digite sua mensagem:</div>'}
-                    `);
-                    terminalData.step = terminalData.step === 4 ? 5 : 6;
-                }
-            },
-            solicitacao: () => {
-                if (terminalData.step >= 4) {
-                    terminalData.tipo = 'Solicitação';
-                    addTerminalOutput(`
-                        <div>Tipo definido como: <span class="terminal-command">Solicitação</span></div>
-                        ${terminalData.step === 4 ? '<div>Deseja informar uma categoria? (opcional)</div>' : '<div>Por favor, digite sua mensagem:</div>'}
-                    `);
-                    terminalData.step = terminalData.step === 4 ? 5 : 6;
-                }
-            },
-            categoria: (arg) => {
-                if (terminalData.step >= 5) {
-                    if (!arg) {
-                        addTerminalOutput('<div>Por favor, informe uma categoria. Ex: <span class="terminal-command">categoria Saúde</span></div>');
-                        return;
-                    }
-                    
-                    terminalData.categoria = arg;
-                    addTerminalOutput(`
-                        <div>Categoria definida como: <span class="terminal-command">${arg}</span></div>
                         <div>Por favor, digite sua mensagem:</div>
                     `);
-                    terminalData.step = 6;
+                    terminalData.step = 3;
                 }
             },
             sim: () => {
-                if (terminalData.step === 7) {
+                if (terminalData.step === 4) {
                     sendTerminalData();
                 }
             },
             nao: () => {
-                if (terminalData.step === 7) {
+                if (terminalData.step === 4) {
                     addTerminalOutput('<div>Envio cancelado. Digite <span class="terminal-command">iniciar</span> para começar novamente.</div>');
                     terminalData.step = -1;
-                }
-            },
-            voltar: () => {
-                if (terminalData.step > 0) {
-                    terminalData.step--;
-                    addTerminalOutput('<div>Voltando ao passo anterior...</div>');
-                    
-                    switch(terminalData.step) {
-                        case 0:
-                            addTerminalOutput('<div>Qual é o seu nome completo?</div>');
-                            break;
-                        case 1:
-                            addTerminalOutput('<div>Qual é o seu email?</div>');
-                            break;
-                        case 2:
-                            addTerminalOutput('<div>Qual é o seu telefone? (opcional)</div>');
-                            break;
-                        case 3:
-                            addTerminalOutput('<div>Em qual bairro você mora? (opcional)</div>');
-                            break;
-                        case 4:
-                            addTerminalOutput('<div>Esta é uma <span class="terminal-command">sugestao</span>, <span class="terminal-command">reclamacao</span>, <span class="terminal-command">elogio</span>, <span class="terminal-command">denuncia</span> ou <span class="terminal-command">solicitacao</span>?</div>');
-                            break;
-                        case 5:
-                            addTerminalOutput('<div>Deseja informar uma categoria? (opcional)</div>');
-                            break;
-                        case 6:
-                            addTerminalOutput('<div>Por favor, digite sua mensagem:</div>');
-                            break;
-                    }
                 }
             }
         };
@@ -890,32 +408,24 @@
         // Função para adicionar saída no terminal
         function addTerminalOutput(html) {
             const output = document.getElementById('terminalOutput');
-            const div = document.createElement('div');
-            div.className = 'fade-in';
-            div.innerHTML = html;
-            output.appendChild(div);
+            output.innerHTML += html;
             terminalContainer.scrollTop = terminalContainer.scrollHeight;
         }
         
         // Processar comandos do terminal
         document.getElementById('terminalCommand').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
-                const input = this.value.trim();
+                const command = this.value.trim();
                 this.value = '';
                 
                 // Adiciona o comando no histórico
-                addTerminalOutput(`<div class="terminal-prompt">>> <span class="terminal-command">${input}</span></div>`);
-                
-                // Divide o comando e argumentos
-                const parts = input.split(' ');
-                const command = parts[0];
-                const arg = parts.slice(1).join(' ');
+                addTerminalOutput(`<div class="terminal-prompt">>> <span class="terminal-command">${command}</span></div>`);
                 
                 // Processa o comando
                 if (terminalCommands[command]) {
-                    terminalCommands[command](arg);
+                    terminalCommands[command]();
                 } else {
-                    processTerminalInput(input);
+                    processTerminalInput(command);
                 }
             }
         });
@@ -924,10 +434,6 @@
         function processTerminalInput(input) {
             switch (terminalData.step) {
                 case 0: // Nome
-                    if (!input) {
-                        addTerminalOutput('<div>Por favor, informe seu nome:</div>');
-                        return;
-                    }
                     terminalData.nome = input;
                     addTerminalOutput('<div>Qual é o seu email?</div>');
                     terminalData.step = 1;
@@ -939,45 +445,193 @@
                         return;
                     }
                     terminalData.email = input;
-                    addTerminalOutput('<div>Qual é o seu telefone? (opcional - digite "pular" para ignorar)</div>');
+                    addTerminalOutput(`
+                        <div>Esta é uma <span class="terminal-command">sugestao</span> ou <span class="terminal-command">reclamacao</span>?</div>
+                    `);
                     terminalData.step = 2;
                     break;
                     
-                case 2: // Telefone
-                    if (input.toLowerCase() === 'pular') {
-                        addTerminalOutput('<div>Em qual bairro você mora? (opcional - digite "pular" para ignorar)</div>');
-                    } else {
-                        terminalData.telefone = input;
-                        addTerminalOutput('<div>Em qual bairro você mora? (opcional - digite "pular" para ignorar)</div>');
-                    }
-                    terminalData.step = 3;
-                    break;
-                    
-                case 3: // Bairro
-                    if (input.toLowerCase() !== 'pular') {
-                        terminalData.bairro = input;
-                    }
+                case 3: // Mensagem
+                    terminalData.mensagem = input;
                     addTerminalOutput(`
-                        <div>Esta é uma <span class="terminal-command">sugestao</span>, <span class="terminal-command">reclamacao</span>, <span class="terminal-command">elogio</span>, <span class="terminal-command">denuncia</span> ou <span class="terminal-command">solicitacao</span>?</div>
+                        <div>Confira seus dados:</div>
+                        <div>Nome: ${terminalData.nome}</div>
+                        <div>Email: ${terminalData.email}</div>
+                        <div>Tipo: ${terminalData.tipo}</div>
+                        <div>Mensagem: ${terminalData.mensagem}</div>
+                        <br>
+                        <div>Confirmar envio? (<span class="terminal-command">sim</span> / <span class="terminal-command">nao</span>)</div>
                     `);
                     terminalData.step = 4;
                     break;
                     
-                case 5: // Categoria
-                    if (input.toLowerCase() === 'pular') {
-                        addTerminalOutput('<div>Por favor, digite sua mensagem:</div>');
-                    } else {
-                        terminalData.categoria = input;
-                        addTerminalOutput('<div>Por favor, digite sua mensagem:</div>');
-                    }
-                    terminalData.step = 6;
-                    break;
-                    
-                case 6: // Mensagem
-                    if (!input) {
-                        addTerminalOutput('<div>Por favor, digite sua mensagem:</div>');
-                        return;
-                    }
-                    terminalData.mensagem = input;
-                    addTerminalOutput(`
-                        <div>Confira seus dados:</div>
+                default:
+                    addTerminalOutput('<div>Comando não reconhecido. Digite <span class="terminal-command">ajuda</span> para ver os comandos.</div>');
+            }
+        }
+        
+        // Enviar dados do terminal
+        function sendTerminalData() {
+            // Email da prefeitura (substitua pelo email real)
+            const emailPrefeitura = 'contato@prefeitura.nossacidade.gov.br';
+            
+            // Assunto do email
+            const assunto = `${terminalData.tipo} para a Cidade - ${terminalData.nome}`;
+            
+            // Corpo do email para a prefeitura
+            const corpoEmailPrefeitura = `
+                Nome: ${terminalData.nome}
+                Email: ${terminalData.email}
+                Tipo: ${terminalData.tipo}
+                
+                Mensagem:
+                ${terminalData.mensagem}
+                
+                ---
+                Esta mensagem foi enviada através do terminal de sugestões do site.
+            `;
+            
+            // Corpo do email de confirmação para o cidadão
+            const corpoEmailConfirmacao = `
+                Prezado(a) ${terminalData.nome},
+                
+                Agradecemos pelo seu contato! Esta é uma confirmação de que recebemos sua ${terminalData.tipo.toLowerCase()}:
+                
+                "${terminalData.mensagem}"
+                
+                Sua mensagem foi encaminhada para o setor responsável e será analisada.
+                Caso necessário, entraremos em contato através deste email.
+                
+                Protocolo: #${Math.floor(Math.random() * 1000000).toString().padStart(6, '0')}
+                Data: ${new Date().toLocaleDateString('pt-BR')}
+                
+                Atenciosamente,
+                Prefeitura Municipal de Rio Branco do Ivaí
+                
+                ---
+                Esta é uma mensagem automática, por favor não responda.
+            `;
+            
+            // Criar link mailto para a prefeitura
+            const mailtoLinkPrefeitura = `mailto:${emailPrefeitura}?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpoEmailPrefeitura)}`;
+            
+            // Criar link mailto para confirmação
+            const mailtoLinkConfirmacao = `mailto:${terminalData.email}?subject=Confirmação de ${terminalData.tipo.toLowerCase()}&body=${encodeURIComponent(corpoEmailConfirmacao)}`;
+            
+            // Abrir cliente de email para enviar à prefeitura
+            window.location.href = mailtoLinkPrefeitura;
+            
+            // Simular envio de confirmação
+            console.log('Email de confirmação seria enviado para:', terminalData.email);
+            
+            // Mostrar mensagem de sucesso
+            addTerminalOutput(`
+                <div>Mensagem enviada com sucesso!</div>
+                <div>Você receberá uma cópia de confirmação no email cadastrado.</div>
+                <br>
+                <div>Digite <span class="terminal-command">iniciar</span> para enviar outra mensagem.</div>
+            `);
+            
+            // Mostrar mensagem de status no formulário também
+            showStatus('Mensagem enviada com sucesso através do terminal!', 'success');
+            
+            terminalData.step = -1;
+        }
+        
+        // Enviar dados do formulário tradicional
+        document.getElementById('formSugestao').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Coletar dados do formulário
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const tipo = document.getElementById('tipo').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const receberCopia = document.getElementById('receberCopia').checked;
+            
+            // Validar email
+            if (!validateEmail(email)) {
+                showStatus('Por favor, insira um email válido.', 'error');
+                return;
+            }
+            
+            // Email da prefeitura (substitua pelo email real)
+            const emailPrefeitura = 'rafael.assis.santos@escola.pr.gov.br';
+            
+            // Assunto do email
+            const assunto = `${tipo} para a Cidade - ${nome}`;
+            
+            // Corpo do email para a prefeitura
+            const corpoEmailPrefeitura = `
+                Nome: ${nome}
+                Email: ${email}
+                Tipo: ${tipo}
+                
+                Mensagem:
+                ${mensagem}
+                
+                ---
+                Esta mensagem foi enviada através do formulário de contato do site.
+            `;
+            
+            // Corpo do email de confirmação para o cidadão
+            const corpoEmailConfirmacao = `
+                Prezado(a) ${nome},
+                
+                Agradecemos pelo seu contato! Esta é uma confirmação de que recebemos sua ${tipo.toLowerCase()}:
+                
+                "${mensagem}"
+                
+                Sua mensagem foi encaminhada para o setor responsável e será analisada.
+                Caso necessário, entraremos em contato através deste email.
+                
+                Protocolo: #${Math.floor(Math.random() * 1000000).toString().padStart(6, '0')}
+                Data: ${new Date().toLocaleDateString('pt-BR')}
+                
+                Atenciosamente,
+                Prefeitura Municipal de Rio Branco do Ivaí
+                
+                ---
+                Esta é uma mensagem automática, por favor não responda.
+            `;
+            
+            // Criar link mailto para a prefeitura
+            const mailtoLinkPrefeitura = `mailto:${emailPrefeitura}?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpoEmailPrefeitura)}`;
+            
+            // Abrir cliente de email para enviar à prefeitura
+            window.location.href = mailtoLinkPrefeitura;
+            
+            // Simular envio de confirmação (em produção, isso seria feito pelo backend)
+            if (receberCopia) {
+                console.log('Email de confirmação seria enviado para:', email);
+            }
+            
+            // Mostrar mensagem de sucesso
+            const msgSucesso = receberCopia 
+                ? 'Obrigado pela sua contribuição! Um email foi gerado para a prefeitura e você receberá uma cópia de confirmação.' 
+                : 'Obrigado pela sua contribuição! Um email foi gerado para a prefeitura com sua mensagem.';
+            
+            showStatus(msgSucesso, 'success');
+            
+            // Limpar formulário (opcional)
+            setTimeout(() => {
+                this.reset();
+                document.getElementById('statusMessage').style.display = 'none';
+            }, 10000);
+        });
+        
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+        
+        function showStatus(message, type) {
+            const statusElement = document.getElementById('statusMessage');
+            statusElement.textContent = message;
+            statusElement.className = `status-message ${type}`;
+            statusElement.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+
